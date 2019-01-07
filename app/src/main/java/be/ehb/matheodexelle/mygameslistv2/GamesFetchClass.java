@@ -26,7 +26,6 @@ public class GamesFetchClass extends AsyncTask<String, String,String> {
     HttpURLConnection conSingleGame;
     HttpURLConnection conFullGame;
     ArrayList<Game> games;
-    int appId;
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -50,7 +49,7 @@ public class GamesFetchClass extends AsyncTask<String, String,String> {
             conSingleGame.connect();
             BufferedReader bf = new BufferedReader(new InputStreamReader(conSingleGame.getInputStream()));
             StringBuilder sb = new StringBuilder();
-            String line = null;
+            String line;
             while ((line = bf.readLine()) != null) {
                 sb.append(line + "\n");
             }
@@ -73,7 +72,6 @@ public class GamesFetchClass extends AsyncTask<String, String,String> {
                     sb2.append(line2 + "\n");
                 }
                 result2 = sb2.toString();
-                //System.out.println(result2);
                 JSONObject jObject2 = new JSONObject(result2);
                 //get appid from GetAppList
                 JSONObject jObject3 = jObject2.getJSONObject(element.getString("appid"));
@@ -85,16 +83,10 @@ public class GamesFetchClass extends AsyncTask<String, String,String> {
                 }else{
                     isGame = "null";
                 }
-                /////WORK NEEDED
-                System.out.println("is a "  + isGame);
                 if(isSuccess) {
-                        //This line of code clears the html contained in the string inside it
-                        //String desc = android.text.Html.fromHtml(jObject3.getJSONObject("data").getString("type").toString()).toString();
-
                     StringBuilder sb3 = new StringBuilder();
 
                     if(jObject3.has("developers")){
-                        System.out.println("JAAACKPOOOOOOT");
                         JSONArray devsArr = jObject3.getJSONArray("developers");
                         for(int j = 0; j < devsArr.length(); j++){
                             sb3.append(" " + devsArr.get(j).toString());
@@ -105,10 +97,8 @@ public class GamesFetchClass extends AsyncTask<String, String,String> {
                     else{
                         devJSON = null;
                     }
-                    System.out.println(isGame);
                     if(isGame.equals("game")){
                         JSONObject jObject4 = jObject3.getJSONObject("data");
-                        System.out.println("You got in here ! this is good !");
                         Game tempGame = new Game(element.getString("appid"),
                                 jObject4.getString("name"),
                                 jObject4.getString("type"),
@@ -118,18 +108,15 @@ public class GamesFetchClass extends AsyncTask<String, String,String> {
                                 jObject4.getBoolean("is_free"),
                                 devJSON);
                         games.add(tempGame);
-                        System.out.println(games.toString());
                     }
 
                 }
                 i++;
             }
-            System.out.println(i);
-            System.out.println(games.size());
             return null;
         }
         catch(Exception e){
-            System.out.println(e.toString());
+            e.getMessage();
         }
         return null;
     }
