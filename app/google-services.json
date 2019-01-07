@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1005582851953",
+    "firebase_url": "https://mygameslistv2.firebaseio.com",
+    "project_id": "mygameslistv2",
+    "storage_bucket": "mygameslistv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005582851953:android:eb7df9cb0cd3b1c3",
+        "android_client_info": {
+          "package_name": "be.ehb.matheodexelle.mygameslistv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005582851953-o57k986ta8vfsis6946jseijpvr3ndb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "be.ehb.matheodexelle.mygameslistv2",
+            "certificate_hash": "73f334bd5fe55a61044185b5d8266ab0e4972826"
+          }
+        },
+        {
+          "client_id": "1005582851953-qmlqgce6unnliqnsaaia3ta49hsc1g20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6nqXaM3Ac4ykyA4uoHPJ2UD2L3QCYXJU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005582851953-qmlqgce6unnliqnsaaia3ta49hsc1g20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

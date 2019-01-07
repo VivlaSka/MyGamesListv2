@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_all_games"
+            android:icon="@drawable/ic_all_games"
+            android:title="All Games">
+        </item>
+        <item android:id="@+id/nav_own_games"
+            android:icon="@drawable/ic_own_games"
+            android:title="My Own List">
+        </item>
+    </group>
+</menu>
